@@ -11,7 +11,7 @@ if getattr(sys, 'frozen', False):
 else:
     folder_exe = os.path.dirname(os.path.abspath(__file__))
 
-path_gambar = os.path.join(folder_exe, "gambar.jpg")
+path_gambar = os.path.join(folder_exe, "gambar.jpeg")
 
 # Load font sekali saja
 font_path = os.path.join(folder_exe, "arial.ttf")  # Pastikan font ada di folder exe juga
@@ -30,16 +30,16 @@ def ambil_data():
     warna_teks = (0, 0, 0)  # Hitam
 
     timestamp = datetime.now().strftime("%H:%M")
-    tanggal = datetime.now().strftime("%d-%m-%Y")
+    tanggal = datetime.now().strftime("%d.%m.%Y")
 
     # Cetak nomer1
     draw.text((670, 230), nomer1, font=font, fill=warna_teks)
     # Cetak nomer2
     draw.text((755, 330), nomer2, font=font, fill=warna_teks)
     # Cetak Waktu
-    draw.text((400, 135), timestamp, font=font1, fill=warna_teks)
+    draw.text((400, 205), timestamp, font=font1, fill=warna_teks)
     # Cetak Tanggal
-    draw.text((340, 205), tanggal, font=font1, fill=warna_teks)
+    draw.text((340, 135), tanggal, font=font1, fill=warna_teks)
     
     # Buat folder hasil jika belum ada
     folder_hasil = os.path.join(folder_exe, "hasil")

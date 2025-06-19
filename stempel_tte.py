@@ -5,7 +5,7 @@ from datetime import datetime
 import tkinter as tk
 import tkinter.messagebox as messagebox
 
-# Tentukan folder kerja sesuai environment (exe atau script)
+# Tentukan folder kerja sesuai environment
 if getattr(sys, 'frozen', False):
     folder_exe = os.path.dirname(sys.executable)
 else:

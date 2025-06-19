@@ -14,7 +14,7 @@ else:
 path_gambar = os.path.join(folder_exe, "gambar.jpeg")
 
 # Load font sekali saja
-font_path = os.path.join(folder_exe, "arial.ttf")  # Pastikan font ada di folder exe juga
+font_path = os.path.join(folder_exe, "calibri.ttf")  # Pastikan font ada di folder exe juga
 font_size = 70
 font_size1 = 50
 font = ImageFont.truetype(font_path, font_size)
@@ -30,16 +30,17 @@ def ambil_data():
     warna_teks = (0, 0, 0)  # Hitam
 
     timestamp = datetime.now().strftime("%H:%M")
-    tanggal = datetime.now().strftime("%d.%m.%Y")
+    tanggal = datetime.now().strftime("%d-%m-%Y")
 
-    # Cetak nomer1
-    draw.text((670, 230), nomer1, font=font, fill=warna_teks)
-    # Cetak nomer2
-    draw.text((755, 330), nomer2, font=font, fill=warna_teks)
-    # Cetak Waktu
-    draw.text((400, 205), timestamp, font=font1, fill=warna_teks)
     # Cetak Tanggal
-    draw.text((340, 135), tanggal, font=font1, fill=warna_teks)
+    draw.text((365, 140), tanggal, font=font1, fill=warna_teks)
+    # Cetak Waktu
+    draw.text((415, 210), timestamp, font=font1, fill=warna_teks)
+    # Cetak nomer1
+    draw.text((670, 240), nomer1, font=font, fill=warna_teks)
+    # Cetak nomer2
+    draw.text((755, 340), nomer2, font=font, fill=warna_teks)
+
     
     # Buat folder hasil jika belum ada
     folder_hasil = os.path.join(folder_exe, "hasil")
@@ -102,4 +103,5 @@ submit_button.pack(side=tk.LEFT, padx=(0, 5))
 clear_button = tk.Button(button_frame, text="Clear", width=10, command=clear_input)
 clear_button.pack(side=tk.LEFT, padx=(5, 0))
 
+root.bind('<Return>', lambda event: ambil_data())
 root.mainloop()

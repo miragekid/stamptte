@@ -17,21 +17,37 @@
             margin-top: 10px;
             margin-bottom: 20px;
         }
-        input[type="submit"] {
+        .button-group {
+            display: flex;
+            gap: 10px;
+        }
+        input[type="submit"], button[type="button"] {
             padding: 10px 20px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <h2>Stempel TTE Generator</h2>
-    <form method="post">
+    <form method="post" id="tteForm">
         <label>Nomor 1:</label>
-        <input type="text" name="nomer1" required>
+        <input type="text" name="nomer1" id="nomer1" required>
 
         <label>Nomor 2:</label>
-        <input type="text" name="nomer2" required>
+        <input type="text" name="nomer2" id="nomer2" required>
 
-        <input type="submit" value="Cetak">
+        <div class="button-group">
+            <input type="submit" value="Cetak">
+            <button type="button" onclick="clearForm()">Clear</button>
+        </div>
     </form>
+
+    <script>
+        function clearForm() {
+            document.getElementById("nomer1").value = "";
+            document.getElementById("nomer2").value = "";
+            document.getElementById("nomer1").focus();
+        }
+    </script>
 </body>
 </html>
